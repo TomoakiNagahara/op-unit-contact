@@ -3,7 +3,7 @@
  *
  * @created     2023-01-30
  * @version     1.0
- * @package     op-unit-model
+ * @package     op-unit-contact
  * @author      Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright   Tomoaki Nagahara All right reserved.
  */
@@ -21,4 +21,4 @@ namespace OP;
 /**	Include
  *
  */
-require_once(__DIR__.'/Model.class.php');
+require_once(__DIR__.'/Contact.class.php');

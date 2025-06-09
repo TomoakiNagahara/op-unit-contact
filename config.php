@@ -1,11 +1,11 @@
 <?php
-/** op-unit-model:/config.php
+/** op-unit-contact:/config.php
  *
  * Default config file.
  *
  * @created    2023-01-30
  * @version    1.0
- * @package    op-unit-model
+ * @package    op-unit-contact
  * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright  Tomoaki Nagahara All right reserved.
  */

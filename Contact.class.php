@@ -1,9 +1,9 @@
 <?php
-/** op-unit-model:/Model.class.php
+/** op-unit-contact:/Contact.class.php
  *
  * @created     2023-01-30
  * @version     1.0
- * @package     op-unit-model
+ * @package     op-unit-contact
  * @author      Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright   Tomoaki Nagahara All right reserved.
  */
@@ -25,15 +25,15 @@ use OP\IF_UNIT;
 use OP\OP_CORE;
 use OP\OP_CI;
 
-/** Model
+/** Contact
  *
  * @created     2023-01-30
  * @version     1.0
- * @package     op-unit-model
+ * @package     op-unit-contact
  * @author      Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright   Tomoaki Nagahara All right reserved.
  */
-class Model implements IF_UNIT
+class Contact implements IF_UNIT
 {
 	use OP_CORE, OP_CI;
 }
