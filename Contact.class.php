@@ -69,4 +69,24 @@ class Contact implements IF_UNIT
 		//	...
 		self::Template($file_path, ['form'=>$form, 'records'=>$records]);
 	}
+
+	/** Form
+	 *
+	 * @created    2025-06-10
+	 * @return    \OP\IF_FORM
+	 */
+	static function Form() : \OP\IF_FORM
+	{
+		/* @var $_form \OP\IF_FORM */
+		static $_form = null;
+
+		//	Instantiate the form only once.
+		if( $_form === null ){
+			$_form = OP()->Unit()->Instantiate('Form');
+			$_form -> Config(__DIR__.'/form/contact.php');
+		}
+
+		//	Return the IF_FORM.
+		return $_form;
+	}
 }
