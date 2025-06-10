@@ -89,4 +89,26 @@ class Contact implements IF_UNIT
 		//	Return the IF_FORM.
 		return $_form;
 	}
+
+	/** QQL
+	 *
+	 * @created    2025-06-10
+	 * @return    \OP\IF_QQL
+	 */
+	static function QQL() : \OP\IF_QQL
+	{
+		/* @var $_qql \OP\IF_QQL */
+		static $_qql = null;
+
+		//	Instantiate the unit only once.
+		if( $_qql === null ){
+			$_qql = OP()->Unit('QQL');
+			$file = 'Contact.sqlite3';
+			$path = (OP()->Env()->isCI() ? 'ci/':'') . $file;
+			$_qql->Open($path);
+		}
+
+		//	Return the IF_QQL.
+		return $_qql;
+	}
 }
