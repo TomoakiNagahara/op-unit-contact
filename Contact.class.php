@@ -111,4 +111,18 @@ class Contact implements IF_UNIT
 		//	Return the IF_QQL.
 		return $_qql;
 	}
+
+	/** Return login id number
+	 *
+	 * @created    2025-06-10
+	 * @return     int         $id
+	 */
+	static function Id() : int
+	{
+		//	...
+		$info = OP()->Unit('Login')->Info();
+
+		//	...
+		return $info['ai'] ?? 0;
+	}
 }
