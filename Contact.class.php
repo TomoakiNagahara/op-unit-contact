@@ -125,4 +125,27 @@ class Contact implements IF_UNIT
 		//	...
 		return $info['ai'] ?? 0;
 	}
+
+	/** Get message records.
+	 *
+	 * @created    2025-06-10
+	 * @return     array       $records
+	 */
+	static function Load() : array
+	{
+		//	...
+		$qql = self::QQL();
+		$id  = self::Id();
+
+		//	...
+		if( OP()->Env()->isCI() ){
+			$id = 1;
+		}
+
+		//	...
+		$records = $qql->Get(" t_message.id = {$id} ",[],['limit'=>30]);
+
+		//	...
+		return $records;
+	}
 }
