@@ -1,0 +1,56 @@
+<?php
+/**	op-unit-contact:/admin/reply.phtml
+ *
+ * @created     2025-06-10
+ * @version     1.0
+ * @package     op-unit-contact
+ * @author      Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright   Tomoaki Nagahara All right reserved.
+ */
+
+/**	Declare strict
+ *
+ */
+declare(strict_types=1);
+
+/**	namespace
+ *
+ */
+namespace OP;
+
+/* @var $form    \OP\IF_FORM */
+/* @var $qql     \OP\IF_QQL  */
+/* @var $records  array      */
+
+?>
+<h1>Reply</h1>
+<?php $form->Start() ?>
+	<!-- Form -->
+	<?php $form->Input('id') ?>
+	<button> Extract messages </button><br/>
+	<?php $form->Error('id') ?>
+
+	<!-- Empty id message -->
+	<?php if( empty($form->GetValue('id')) ): ?>
+		<p>Enter the user ID for which you want to extract the message.</p>
+	<?php endif; ?>
+
+	<hr>
+
+	<?php if( $records ): ?>
+		<div>
+			<?php foreach( $records as $record ): ?>
+				<div class="<?= $record['reply'] ? 'italic':'bold' ?>">
+					<?= $record['id'] ?>: <?= $record['message'] ?> (<?= $record['timestamp'] ?>)
+				</div>
+			<?php endforeach; ?>
+		</div>
+
+		<hr/>
+
+		<!-- Reply Area -->
+		<?php $form->Input('replay') ?><br/>
+		<button> Reply message </button><br/>
+	<?php endif; ?>
+
+<?php $form->Finish() ?>
