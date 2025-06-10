@@ -24,6 +24,7 @@ namespace OP\UNIT;
 use OP\IF_UNIT;
 use OP\OP_CORE;
 use OP\OP_CI;
+use OP\OP_TEMPLATE;
 
 /** Contact
  *
@@ -35,5 +36,9 @@ use OP\OP_CI;
  */
 class Contact implements IF_UNIT
 {
+	/** Use
+	 *
+	 */
 	use OP_CORE, OP_CI;
+	use OP_TEMPLATE;
 }
