@@ -41,4 +41,32 @@ class Contact implements IF_UNIT
 	 */
 	use OP_CORE, OP_CI;
 	use OP_TEMPLATE;
+
+	/** Automatically
+	 *
+	 * @created    2025-06-10
+	 * @param      string      $file_path
+	 */
+	static function Auto( string $file_path='form.phtml' )
+	{
+		//	...
+		$form = self::Form();
+
+		//	...
+		if( $form->isValidate() ){
+			//	...
+			$io = Self::Save();
+
+			//	...
+			if( $io ){
+				$form->Clear();
+			}
+		}
+
+		//	...
+		$records = Self::Load();
+
+		//	...
+		self::Template($file_path, ['form'=>$form, 'records'=>$records]);
+	}
 }
