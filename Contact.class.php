@@ -148,4 +148,34 @@ class Contact implements IF_UNIT
 		//	...
 		return $records;
 	}
+
+	/** Save message.
+	 *
+	 * @created    2025-06-10
+	 * @return     bool
+	 */
+	static function Save() : bool
+	{
+		//	...
+		$form = self::Form();
+		$qql  = self::QQL();
+		$id   = self::Id();
+
+		//	...
+		$message = $form->GetValue('message');
+
+		//	...
+		$set = [
+			'id'        => $id,
+			'message'   => $message,
+			'created'   => OP()->Time(true),
+			'timestamp' => OP()->Timestamp(false),
+		];
+
+		//	...
+		$ai = $qql->Set(" t_message ", $set);
+
+		//	...
+		return $ai ? true: false;
+	}
 }
